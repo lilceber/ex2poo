@@ -1,0 +1,10 @@
+class Pessoa {
+   
+    String nome;
+
+    static int idade = 0;
+
+    public Pessoa(String nome) {
+        this.nome = nome; 
+        idade++; 
+    }
