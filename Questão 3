@@ -1,0 +1,108 @@
+package planosdesaude;
+
+import java.util.arraylist;
+import java.util.date;
+import java.util.list;
+
+public class pessoa {
+    private string nome;
+    private string endereco;
+    private date datanascimento;
+    private char sexo;
+
+    public pessoa(string nome, string endereco, date datanascimento, char sexo) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.datanascimento = datanascimento;
+        this.sexo = sexo;
+    }
+
+    public double calculartarifa() {
+        return 0.0;
+    }
+}
+
+public class titular extends pessoa {
+    private string cpf;
+
+    public titular(string nome, string endereco, date datanascimento, char sexo, string cpf) {
+        super(nome, endereco, datanascimento, sexo);
+        this.cpf = cpf;
+    }
+}
+
+public class dependente extends pessoa {
+    private string parentesco;
+
+    public dependente(string nome, string endereco, date datanascimento, char sexo, string parentesco) {
+        super(nome, endereco, datanascimento, sexo);
+        this.parentesco = parentesco;
+    }
+}
+
+public class profissionalsaude {
+    private string nome;
+    private string especialidade;
+
+    public profissionalsaude(string nome, string especialidade) {
+        this.nome = nome;
+        this.especialidade = especialidade;
+    }
+}
+
+public class consulta {
+    private date dataconsulta;
+    private string descricao;
+    private profissionalsaude profissional;
+
+    public consulta(date dataconsulta, string descricao, profissionalsaude profissional) {
+        this.dataconsulta = dataconsulta;
+        this.descricao = descricao;
+        this.profissional = profissional;
+    }
+}
+
+public class exame {
+    private date dataexame;
+    private string tipoexame;
+    private profissionalsaude profissional;
+
+    public exame(date dataexame, string tipoexame, profissionalsaude profissional) {
+        this.dataexame = dataexame;
+        this.tipoexame = tipoexame;
+        this.profissional = profissional;
+    }
+}
+
+public class fatura {
+    private date datavencimento;
+    private double valortotal;
+    private double percentualmulta;
+    private double jurospordia;
+
+    public double calcularjuros() {
+        return 0.0;
+    }
+
+    public void emitifatura() {
+    }
+}
+
+public class contrato {
+    private string numero;
+    private date datainicio;
+    private date datafim;
+    private double valortotal;
+    private date datareajuste;
+    private titular titular;
+    private list<dependente> dependentes = new arraylist<>();
+    private fatura fatura;
+
+    public double calcularvalortotal() {
+        return 0.0;
+    }
+
+    public fatura gerarfatura() {
+        return fatura;
+    }
+}
